@@ -11,9 +11,9 @@ import Foundation
 struct Nota {
     
     var title: String!
-    var date: NSDate!
+    var date: String!
     
-    init (title:String, date:NSDate	){
+    init (title:String, date:String	){
         
         self.title = title
         self.date = date

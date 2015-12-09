@@ -14,6 +14,7 @@
 		1B3AAE411C177524004F6ECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3AAE3F1C177524004F6ECD /* LaunchScreen.storyboard */; };
 		1B3AAE4A1C17824A004F6ECD /* Nota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AAE491C17824A004F6ECD /* Nota.swift */; };
 		1B3AAE4D1C17845C004F6ECD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AAE4C1C17845C004F6ECD /* CustomTableViewCell.swift */; };
+		1BA0282C1C17534400384AB6 /* NuevaNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0282B1C17534400384AB6 /* NuevaNotaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1B3AAE421C177524004F6ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3AAE491C17824A004F6ECD /* Nota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nota.swift; sourceTree = "<group>"; };
 		1B3AAE4C1C17845C004F6ECD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		1BA0282B1C17534400384AB6 /* NuevaNotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevaNotaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1B3AAE3D1C177524004F6ECD /* Assets.xcassets */,
 				1B3AAE3F1C177524004F6ECD /* LaunchScreen.storyboard */,
 				1B3AAE421C177524004F6ECD /* Info.plist */,
+				1BA0282B1C17534400384AB6 /* NuevaNotaViewController.swift */,
 			);
 			path = MyNotes;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				1B3AAE391C177524004F6ECD /* ViewController.swift in Sources */,
 				1B3AAE371C177524004F6ECD /* AppDelegate.swift in Sources */,
+				1BA0282C1C17534400384AB6 /* NuevaNotaViewController.swift in Sources */,
 				1B3AAE4D1C17845C004F6ECD /* CustomTableViewCell.swift in Sources */,
 				1B3AAE4A1C17824A004F6ECD /* Nota.swift in Sources */,
 			);
@@ -310,6 +314,7 @@
 				1B3AAE471C177524004F6ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

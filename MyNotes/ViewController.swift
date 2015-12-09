@@ -16,8 +16,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let fecha:NSDate = NSDate()
-        data = [Nota(title:"Primera nota",date:fecha),Nota(title:"Segunda nota",date:fecha),Nota(title:"Tercera nota",date:fecha)]
+        //let fecha:NSDate = NSDate()
+        data = [Nota(title:"Primera nota",date:"fecha1"),Nota(title:"Segunda nota",date:"fecha2"),Nota(title:"Tercera nota",date:"fecha3")]
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,18 +39,30 @@ class ViewController: UIViewController, UITableViewDataSource {
         let pos = indexPath.row
         
         cell.title.text = data[pos].title
-        let formatter:NSDateFormatter = NSDateFormatter()
+        cell.date.text = data[pos].date
+        /*let formatter:NSDateFormatter = NSDateFormatter()
         
         cell.date.text = formatter.stringFromDate(data[pos].date)
-        
+        */
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
+   
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToNewNote"{
+            
+            let p2:NuevaNotaViewController = segue.destinationViewController as! NuevaNotaViewController
+                p2.data = "hola"
+        }
 
+    }
+    
+    @IBAction func goToBack(segue: UIStoryboardSegue){
+        NSLog("Regreso")
+    }
 
 }
 
