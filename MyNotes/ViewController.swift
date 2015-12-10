@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         else if(segue.identifier == "goToSelectedNote"){
             let p2:SelectedNoteViewController = segue.destinationViewController as! SelectedNoteViewController
-            p2.pos = table.indexPathForSelectedRow!.row
+            p2.nota = data[table.indexPathForSelectedRow!.row]
                 
         }
 
