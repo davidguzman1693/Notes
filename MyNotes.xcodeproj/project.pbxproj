@@ -16,6 +16,7 @@
 		1B3AAE4D1C17845C004F6ECD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3AAE4C1C17845C004F6ECD /* CustomTableViewCell.swift */; };
 		1BA0282C1C17534400384AB6 /* NuevaNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0282B1C17534400384AB6 /* NuevaNotaViewController.swift */; };
 		1BB16B4A1C18D1000036CCFB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB16B491C18D1000036CCFB /* libsqlite3.tbd */; };
+		1BCD21271C19EC65005A16A1 /* NotaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD21261C19EC65005A16A1 /* NotaDao.swift */; };
 		1BE58A7E1C18F63A0034EBCB /* SelectedNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE58A7D1C18F63A0034EBCB /* SelectedNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		1BB16B491C18D1000036CCFB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1BB16B4D1C18D6350036CCFB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		1BB16B4E1C18DA1B0036CCFB /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		1BCD21261C19EC65005A16A1 /* NotaDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotaDao.swift; sourceTree = "<group>"; };
 		1BE58A7D1C18F63A0034EBCB /* SelectedNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 		1B3AAE351C177524004F6ECD /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				1BCD211D1C19EC37005A16A1 /* Database */,
 				1B3AAE4B1C1783EA004F6ECD /* Cells */,
 				1B3AAE481C1781F1004F6ECD /* Models */,
 				1B3AAE361C177524004F6ECD /* AppDelegate.swift */,
@@ -172,6 +175,14 @@
 				1BB16B691C18DA1C0036CCFB /* SQLiteCipher Mac Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BCD211D1C19EC37005A16A1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1BCD21261C19EC65005A16A1 /* NotaDao.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 				1BA0282C1C17534400384AB6 /* NuevaNotaViewController.swift in Sources */,
 				1B3AAE4D1C17845C004F6ECD /* CustomTableViewCell.swift in Sources */,
 				1BE58A7E1C18F63A0034EBCB /* SelectedNoteViewController.swift in Sources */,
+				1BCD21271C19EC65005A16A1 /* NotaDao.swift in Sources */,
 				1B3AAE4A1C17824A004F6ECD /* Nota.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

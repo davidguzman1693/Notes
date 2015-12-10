@@ -14,6 +14,8 @@ class NuevaNotaViewController: UIViewController {
     @IBOutlet var desc: UITextView!
     var data:String!
     var list:ViewController!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         desc.text = data
@@ -36,7 +38,6 @@ class NuevaNotaViewController: UIViewController {
             
             alert.addAction(action)
             
-            
             presentViewController(alert, animated: true, completion: nil)
 
         }
@@ -47,7 +48,7 @@ class NuevaNotaViewController: UIViewController {
             n.date = "Fecha nueva"
             n.id = 4
             list.data.append(n)
-            self.navigationController?.popToViewController(list, animated: true)
+            navigationController?.popToViewController(self.list, animated: true)
         }
         
         

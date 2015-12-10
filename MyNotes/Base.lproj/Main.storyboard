@@ -26,7 +26,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TEb-cj-9VC"/>
                                     <barButtonItem title="Nueva nota" id="ZFi-qR-6qZ">
                                         <connections>
-                                            <segue destination="c7U-NU-R0R" kind="show" id="i4u-SF-M93"/>
+                                            <segue destination="c7U-NU-R0R" kind="show" identifier="goToNewNote" id="i4u-SF-M93"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -161,6 +161,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="20f-0J-h93"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uvf-Dy-DwH">
                                 <rect key="frame" x="20" y="172" width="560" height="344"/>
@@ -195,6 +200,9 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="eV9-iN-2ZZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="yCf-4u-NRc"/>
                             </mask>
                         </variation>
                     </view>

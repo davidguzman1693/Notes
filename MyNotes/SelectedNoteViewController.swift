@@ -39,10 +39,39 @@ class SelectedNoteViewController: UIViewController {
         desc.editable = true
     }
     @IBAction func deleteNote(sender: AnyObject) {
+        let alert:UIAlertController = UIAlertController(title: "Eliminar Nota", message: "Desea eliminar la nota " + list.data[pos].title, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let actionOk:UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            
+            self.list.data.removeAtIndex(self.pos)
+            self.navigationController?.popToViewController(self.list, animated: true)
+        }
+        
+        let actionCancel:UIAlertAction = UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Default, handler: nil)
+        
+        alert.addAction(actionOk)
+        alert.addAction(actionCancel)
+        
+        presentViewController(alert, animated: true, completion: nil)
+
     }
     @IBAction func aceptEditNote(sender: AnyObject) {
+        
+        if(tittle.text == "" || desc.text == ""){
+            let alert:UIAlertController = UIAlertController(title: "Error", message: "Debes llenar todos los campos", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let action:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            alert.addAction(action)
+            
+            
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }else{
         list.data[pos].title = tittle.text
         list.data[pos].descripcion = desc.text
+        self.navigationController?.popToViewController(list, animated: true)
+        }
     }
     /*
     // MARK: - Navigation
