@@ -12,9 +12,10 @@ struct Nota {
     
     var title: String!
     var date: String!
+    var descripcion: String!
     
-    init (title:String, date:String	){
-        
+    init (title:String, date:String, descripcion:String){
+        self.descripcion = descripcion
         self.title = title
         self.date = date
     }

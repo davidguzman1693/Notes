@@ -13,11 +13,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     var data:[Nota]!
     
+    @IBOutlet var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //let fecha:NSDate = NSDate()
-        data = [Nota(title:"Primera nota",date:"fecha1"),Nota(title:"Segunda nota",date:"fecha2"),Nota(title:"Tercera nota",date:"fecha3")]
+        data = [Nota(title:"Primera nota",date:"fecha1",descripcion: "Descripcion 1"),Nota(title:"Segunda nota",date:"fecha2",descripcion: "Descripcion 1"),Nota(title:"Tercera nota",date:"fecha3",descripcion: "Descripcion 1")]
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +57,11 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             let p2:NuevaNotaViewController = segue.destinationViewController as! NuevaNotaViewController
                 p2.data = "hola"
+        }
+        else if(segue.identifier == "goToSelectedNote"){
+            let p2:SelectedNoteViewController = segue.destinationViewController as! SelectedNoteViewController
+            p2.pos = table.indexPathForSelectedRow!.row
+                
         }
 
     }
