@@ -81,13 +81,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         if segue.identifier == "goToNewNote"{
             
             let p2:NuevaNotaViewController = segue.destinationViewController as! NuevaNotaViewController
-                p2.data = "hola"
+            p2.list = self
+
         }
         else if(segue.identifier == "goToSelectedNote"){
             let p2:SelectedNoteViewController = segue.destinationViewController as! SelectedNoteViewController
             p2.pos = table.indexPathForSelectedRow!.row
             p2.list = self
-        }
+                 }
 
     }
     

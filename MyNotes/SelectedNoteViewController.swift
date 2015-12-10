@@ -14,6 +14,9 @@ class SelectedNoteViewController: UIViewController {
     @IBOutlet var tittle: UITextField!
     @IBOutlet var desc: UITextView!
     var list:ViewController!
+    @IBOutlet var edit: UIBarButtonItem!
+    @IBOutlet var acept: UIBarButtonItem!
+    @IBOutlet var delete: UIBarButtonItem!
     var pos:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,19 @@ class SelectedNoteViewController: UIViewController {
     }
     
 
+    @IBAction func editNote(sender: AnyObject) {
+        delete.enabled = false
+        edit.enabled = false
+        acept.enabled = true
+        tittle.enabled = true
+        desc.editable = true
+    }
+    @IBAction func deleteNote(sender: AnyObject) {
+    }
+    @IBAction func aceptEditNote(sender: AnyObject) {
+        list.data[pos].title = tittle.text
+        list.data[pos].descripcion = desc.text
+    }
     /*
     // MARK: - Navigation
 

@@ -13,6 +13,7 @@ class NuevaNotaViewController: UIViewController {
     @IBOutlet var tittle: UITextField!
     @IBOutlet var desc: UITextView!
     var data:String!
+    var list:ViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
         desc.text = data
@@ -26,6 +27,31 @@ class NuevaNotaViewController: UIViewController {
     }
     
 
+    @IBAction func addNote(sender: AnyObject) {
+        
+        if(tittle.text == "" || desc.text == ""){
+            let alert:UIAlertController = UIAlertController(title: "Error", message: "Debes llenar todos los campos", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let action:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            alert.addAction(action)
+            
+            
+            presentViewController(alert, animated: true, completion: nil)
+
+        }
+        else{
+            let n:Nota = Nota()
+            n.title = tittle.text
+            n.descripcion = desc.text
+            n.date = "Fecha nueva"
+            n.id = 4
+            list.data.append(n)
+            self.navigationController?.popToViewController(list, animated: true)
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 
