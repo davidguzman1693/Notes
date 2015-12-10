@@ -14,11 +14,11 @@ class SelectedNoteViewController: UIViewController {
     @IBOutlet var tittle: UITextField!
     @IBOutlet var desc: UITextView!
     var list:ViewController!
-    var nota:Nota!
+    var pos:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tittle.text = nota.title
-        desc.text = nota.descripcion
+        tittle.text = list.data[pos].title
+        desc.text = list.data[pos].descripcion
         // Do any additional setup after loading the view.
     }
 
