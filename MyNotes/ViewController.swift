@@ -7,28 +7,79 @@
 //
 
 import UIKit
-
+import Parse
 class ViewController: UIViewController, UITableViewDataSource {
     
     
     var data:[Nota]=[Nota]()
+    var data1:[Nota]=[Nota]()
     var notaDao:NoteDao!
     @IBOutlet var table: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     var filteredNotes = [Nota]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Se trae los datos de SQLite
         notaDao = NoteDao()
-        data = notaDao.getAll()
+//        data = notaDao.getAll()
+        notaDao.deleteDataTable()
+        
+        
+        //Se trae los datos de Parse
+        let query = PFQuery(className: "Nota")
+        query.whereKey("IDUser", equalTo:"1")
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil{
+                var n:Nota
+                if let objects = objects {
+                    for object in objects{
+                        n = Nota()
+                        n.idParse = object.objectId
+                        let date:NSDate? = object.updatedAt
+                        let formatter = NSDateFormatter()
+                        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                        n.date = "\(formatter.stringFromDate(date!))"
+                        n.title = object["Titulo"] as! String
+                        n.descripcion = object["Descripcion"] as! String
+                        self.data1.append(n)
+                    }
+                }
+                self.verificarDatosEnParseYSQLite()
+            }
+            else{
+                let alert:UIAlertController = UIAlertController(title: "Verifica tu conexion a Internet", message: "Solo se han podido cargar los datos locales", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let action:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+        }
+        
         
         //Parametrizar la busqueda
-        
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         table.tableHeaderView = searchController.searchBar
-    }
+        
+        
+        
+        }
 
+    //Funcion que verifica datos de Parse y SQLite
+    
+    func verificarDatosEnParseYSQLite(){
+        if(data.count == 0){
+            data = data1
+            table.reloadData()
+           }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

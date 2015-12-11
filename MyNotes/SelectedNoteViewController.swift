@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class SelectedNoteViewController: UIViewController {
 
 
@@ -44,9 +44,26 @@ class SelectedNoteViewController: UIViewController {
         let alert:UIAlertController = UIAlertController(title: "Eliminar Nota", message: "Desea eliminar la nota " + list.data[pos].title, preferredStyle: UIAlertControllerStyle.Alert)
         
         let actionOk:UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            
+            
+            let nota = PFQuery(className: "Nota")
+            nota.getObjectInBackgroundWithId(self.list.data[self.pos].idParse){
+                (note: PFObject?, error:NSError?)-> Void in
+                if(error != nil){
+                    NSLog("****************")
+                    NSLog("\(error)")
+                    
+                    
+                }
+                else{
+                    note?.deleteEventually()
+                }
+            }
+  
             self.notaDao.delete(self.list.data[self.pos])
             self.list.data.removeAtIndex(self.pos)
-
+            //Eliminar en Parse 
+            
             self.navigationController?.popToViewController(self.list, animated: true)
         }
         
@@ -78,6 +95,25 @@ class SelectedNoteViewController: UIViewController {
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         list.data[pos].date = "\(formatter.stringFromDate(date))"
         notaDao.update(list.data[pos])
+            
+        //Editar en Parse
+            
+        let nota = PFQuery(className: "Nota")
+            nota.getObjectInBackgroundWithId(self.list.data[self.pos].idParse){
+                (note: PFObject?, error:NSError?)-> Void in
+                if(error != nil){
+                    NSLog("****************")
+                    NSLog("\(error)")
+                    
+                    
+                }
+                else if let note = note {
+                    note["Titulo"] = self.tittle.text
+                    note["Descripcion"] = self.desc.text
+                    note.saveInBackground()
+                }
+            }
+
         self.navigationController?.popToViewController(list, animated: true)
         }
     }

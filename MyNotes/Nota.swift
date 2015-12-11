@@ -14,12 +14,13 @@ class Nota {
     var date: String!
     var descripcion: String!
     var id:Int64!
-    
+    var idParse:String!
     init(){
         title=""
         date=""
         descripcion=""
         id=0
+        idParse = ""
     }
     
     init (title:String, date:String, descripcion:String){

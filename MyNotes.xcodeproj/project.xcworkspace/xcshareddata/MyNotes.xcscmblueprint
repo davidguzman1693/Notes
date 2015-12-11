@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2EE8503E1D9533CA169B86365B5632E50FA1428F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3AE8ED2E684071AF4FB151FA51BF266B82FF45BD" : 0,
+    "2EE8503E1D9533CA169B86365B5632E50FA1428F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1F45A2B5-9BB6-4048-9DD9-E094D072600A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3AE8ED2E684071AF4FB151FA51BF266B82FF45BD" : "Notes-david\/SQLite.swift\/",
+    "2EE8503E1D9533CA169B86365B5632E50FA1428F" : "Notes-david\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyNotes",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyNotes.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/davidguzman1693\/Notes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2EE8503E1D9533CA169B86365B5632E50FA1428F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/stephencelis\/SQLite.swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AE8ED2E684071AF4FB151FA51BF266B82FF45BD"
+    }
+  ]
+}

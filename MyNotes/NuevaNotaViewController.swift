@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class NuevaNotaViewController: UIViewController {
 
     @IBOutlet var tittle: UITextField!
@@ -51,8 +51,23 @@ class NuevaNotaViewController: UIViewController {
             let formatter = NSDateFormatter()
             formatter.dateFormat = "yyyy/MM/dd HH:mm"
             n.date = "\(formatter.stringFromDate(date))"
-            list.data.append(n)
+            //Guarda en SQLite
             notaDao.insert(n)
+            //Guarda en Parse
+            let nota = PFObject(className: "Nota")
+            nota["Titulo"] = tittle.text
+            nota["Descripcion"] = desc.text
+            nota["IDUser"] = "1"
+            nota.saveInBackgroundWithBlock { (success: Bool!, error: NSError?) -> Void in
+                if(success != nil){
+                    n.idParse = nota.objectId
+                }
+                else{
+                    NSLog("\(error)")
+                }
+            }
+            //Añade a lista
+            list.data.append(n)
             navigationController?.popToViewController(self.list, animated: true)
         }
         

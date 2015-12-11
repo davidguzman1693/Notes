@@ -90,6 +90,15 @@ class NoteDao{
         
     }
     
+    func deleteDataTable() -> Void{
+        do{
+        try db.execute("DELETE FROM nota")
+        }
+        catch {
+            NSLog("No elimino")
+        }
+    }
+    
     /*func getAllByNombre(nombre:String)->[Planeta]{
         
         return statementToList(db.prepare("SELECT * FROM planeta WHERE nombre LIKE '%\(nombre)%'",nil))
